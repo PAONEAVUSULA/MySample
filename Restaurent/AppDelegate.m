@@ -7,8 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "STActivityIndicatorView.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface AppDelegate ()
+
+@property (nonatomic) STActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -17,6 +21,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+//    [NSThread sleepForTimeInterval:1.0];
+    self.activityIndicator = [[[NSBundle mainBundle] loadNibNamed:@"STActivityIndicatorView" owner:self options:nil] objectAtIndex:0];
+    [self.activityIndicator setCenter:self.window.center];
+    self.activityIndicator.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin |  UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+    [self.window addSubview:self.activityIndicator];
+    
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
     return YES;
 }
 
@@ -47,5 +60,47 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation];
+}
+
+- (void)showActivityIndicator
+{
+    [self.window setUserInteractionEnabled:NO];
+    [self.activityIndicator setHidden:NO];
+    [self.window bringSubviewToFront:self.activityIndicator];
+    [self.activityIndicator showActivity];
+}
+
+- (void)stopActivityIndicator
+{
+    [self.window setUserInteractionEnabled:YES];
+    [self.activityIndicator setHidden:YES];
+    [self.activityIndicator stopActivity];
+}
+
+- (void)showAlertWithTitle:(NSString *)title andMessage:(NSString *)aMessage
+{
+    UIAlertController *alert = [UIAlertController
+                                alertControllerWithTitle:title
+                                message:aMessage
+                                preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *okayButton = [UIAlertAction
+                                 actionWithTitle:@"OKAY"
+                                 style:UIAlertActionStyleDefault
+                                 handler:^(UIAlertAction * action) {
+                                     //Handle your yes please button action here
+                                 }];
+    [alert addAction:okayButton];
+    
+    [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
+}
 
 @end

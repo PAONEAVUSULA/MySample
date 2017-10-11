@@ -7,11 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RestaurentModel.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) RestaurentModel *aRestaurant;
 
+- (void)showActivityIndicator;
+- (void)stopActivityIndicator;
+- (void)showAlertWithTitle:(NSString *)title andMessage:(NSString *)aMessage;
 
 @end
 
