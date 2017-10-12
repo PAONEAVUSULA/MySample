@@ -289,7 +289,7 @@ typedef NS_ENUM(NSUInteger, BankAccountFields) {
     NSError *error;
     NSData *data = [NSJSONSerialization dataWithJSONObject:accountInfoDict options:0 error:&error];
     if (error) {
-        [appDelegate showAlertWithTitle:@"MOXIEIT" andMessage:error.localizedDescription];
+        [self showAlertWithTitle:@"MOXIEIT" andMessage:error.localizedDescription];
         return;
     }
     [[WebServiceHandler sharedHandler] postData:data toURLString:POST_BANK_DETAILS_API callBackCompletionHandler:^(id jsonObject, NSError *error) {
@@ -309,7 +309,7 @@ typedef NS_ENUM(NSUInteger, BankAccountFields) {
         }
         [appDelegate stopActivityIndicator];
         if (errorMessage) {
-            [appDelegate showAlertWithTitle:@"MOXIEIT" andMessage:errorMessage];
+            [self showAlertWithTitle:@"MOXIEIT" andMessage:errorMessage];
         }
     }];
 }
@@ -338,7 +338,7 @@ typedef NS_ENUM(NSUInteger, BankAccountFields) {
         }
         [appDelegate stopActivityIndicator];
         if (errorMessage) {
-            [appDelegate showAlertWithTitle:@"MOXIEIT" andMessage:errorMessage];
+            [self showAlertWithTitle:@"MOXIEIT" andMessage:errorMessage];
         }
     }];
 }

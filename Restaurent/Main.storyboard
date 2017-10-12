@@ -649,57 +649,60 @@ Account Type :</string>
                                     <outlet property="delegate" destination="4fA-kJ-VrU" id="Vbf-XC-49H"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rH-qR-72w">
-                                <rect key="frame" x="184" y="440" width="400" height="50"/>
-                                <color key="backgroundColor" red="0.078431372550000003" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="400" id="5IP-Tm-eu5"/>
-                                    <constraint firstAttribute="height" constant="50" id="lCP-83-Rfo"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
-                                <state key="normal" title="LOG IN"/>
-                                <state key="highlighted">
-                                    <color key="titleColor" red="0.70588235290000001" green="0.31372549020000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="loginSelected:" destination="4fA-kJ-VrU" eventType="touchUpInside" id="zvp-q3-voI"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tyw-um-7ii">
-                                <rect key="frame" x="184" y="498" width="400" height="50"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="400" id="7iG-Ak-cjl"/>
-                                    <constraint firstAttribute="height" constant="50" id="sXq-R6-unf"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
-                                <state key="normal" title="Don't have an account? Sign up now!">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="signupSelected:" destination="4fA-kJ-VrU" eventType="touchUpInside" id="KRC-aq-knN"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VHp-vu-t3M">
+                                <rect key="frame" x="184" y="440" width="400" height="108"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rH-qR-72w">
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="50"/>
+                                        <color key="backgroundColor" red="0.078431372550000003" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="400" id="5IP-Tm-eu5"/>
+                                            <constraint firstAttribute="height" constant="50" id="lCP-83-Rfo"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="LOG IN"/>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.70588235290000001" green="0.31372549020000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loginSelected:" destination="4fA-kJ-VrU" eventType="touchUpInside" id="zvp-q3-voI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tyw-um-7ii">
+                                        <rect key="frame" x="0.0" y="58" width="400" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="400" id="7iG-Ak-cjl"/>
+                                            <constraint firstAttribute="height" constant="50" id="sXq-R6-unf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                        <state key="normal" title="Don't have an account? Sign up now!">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="signupSelected:" destination="4fA-kJ-VrU" eventType="touchUpInside" id="KRC-aq-knN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="VHp-vu-t3M" firstAttribute="top" secondItem="qSs-wB-dKp" secondAttribute="bottom" constant="60" id="3o6-g4-p63"/>
                             <constraint firstItem="qSs-wB-dKp" firstAttribute="top" secondItem="svO-Ih-W1T" secondAttribute="bottom" constant="60" id="ACb-vh-yH9"/>
-                            <constraint firstItem="Tyw-um-7ii" firstAttribute="top" secondItem="6rH-qR-72w" secondAttribute="bottom" constant="8" id="BCM-U5-GvW"/>
-                            <constraint firstItem="6rH-qR-72w" firstAttribute="top" secondItem="qSs-wB-dKp" secondAttribute="bottom" constant="60" id="QZy-dS-sdg"/>
+                            <constraint firstItem="VHp-vu-t3M" firstAttribute="centerX" secondItem="EZB-OK-Lbg" secondAttribute="centerX" id="E2K-aP-uCN"/>
                             <constraint firstItem="svO-Ih-W1T" firstAttribute="centerX" secondItem="EZB-OK-Lbg" secondAttribute="centerX" id="bfO-5e-Daz"/>
-                            <constraint firstItem="6rH-qR-72w" firstAttribute="centerX" secondItem="qSs-wB-dKp" secondAttribute="centerX" id="cY7-ag-MpS"/>
                             <constraint firstItem="svO-Ih-W1T" firstAttribute="top" secondItem="WVc-v9-qF7" secondAttribute="bottom" constant="80" id="dNt-PB-in8"/>
                             <constraint firstAttribute="trailing" secondItem="qSs-wB-dKp" secondAttribute="trailing" constant="134" id="gMw-KI-Wpe"/>
-                            <constraint firstItem="Tyw-um-7ii" firstAttribute="centerX" secondItem="EZB-OK-Lbg" secondAttribute="centerX" id="jI7-po-s8O"/>
                             <constraint firstItem="qSs-wB-dKp" firstAttribute="leading" secondItem="EZB-OK-Lbg" secondAttribute="leading" constant="134" id="jXg-4N-EZ1"/>
                         </constraints>
                     </view>
@@ -2518,7 +2521,7 @@ Account Type :</string>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kel-Rc-IvN">
+                                                                <switch opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kel-Rc-IvN">
                                                                     <rect key="frame" x="543" y="9" width="51" height="31"/>
                                                                     <connections>
                                                                         <action selector="accountSwitchValueChanged:" destination="hXf-lw-Kak" eventType="valueChanged" id="Xrw-JG-Sv2"/>

@@ -479,7 +479,7 @@ typedef NS_ENUM(NSUInteger, RegistrationFields) {
     NSError *error;
     NSData *data = [NSJSONSerialization dataWithJSONObject:postDict options:0 error:&error];
     if (error) {
-        [appDelegate showAlertWithTitle:@"MOXIEIT" andMessage:error.localizedDescription];
+        [self showAlertWithTitle:@"MOXIEIT" andMessage:error.localizedDescription];
         return;
     }
     [[WebServiceHandler sharedHandler] postData:data toURLString:IMAGE_UPLOAD_API callBackCompletionHandler:^(id jsonObject, NSError *error) {
@@ -501,7 +501,7 @@ typedef NS_ENUM(NSUInteger, RegistrationFields) {
         }
         [appDelegate stopActivityIndicator];
         if (errorMessage) {
-            [appDelegate showAlertWithTitle:@"MOXIEIT" andMessage:errorMessage];
+            [self showAlertWithTitle:@"MOXIEIT" andMessage:errorMessage];
         }
     }];
 }
@@ -511,7 +511,7 @@ typedef NS_ENUM(NSUInteger, RegistrationFields) {
     NSError *error;
     NSData *data = [NSJSONSerialization dataWithJSONObject:regDict options:0 error:&error];
     if (error) {
-        [appDelegate showAlertWithTitle:@"MOXIEIT" andMessage:error.localizedDescription];
+        [self showAlertWithTitle:@"MOXIEIT" andMessage:error.localizedDescription];
         return;
     }
     
@@ -542,7 +542,7 @@ typedef NS_ENUM(NSUInteger, RegistrationFields) {
         }
         [appDelegate stopActivityIndicator];
         if (errorMessage) {
-            [appDelegate showAlertWithTitle:@"MOXIEIT" andMessage:errorMessage];
+            [self showAlertWithTitle:@"MOXIEIT" andMessage:errorMessage];
         }
     }];
 }

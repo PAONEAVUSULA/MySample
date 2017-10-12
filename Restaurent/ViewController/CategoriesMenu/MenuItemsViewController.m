@@ -332,7 +332,7 @@
         [appDelegate stopActivityIndicator];
         [self.itemsTableView reloadData];
         if (errorMessage) {
-            [appDelegate showAlertWithTitle:@"MOXIEIT" andMessage:errorMessage];
+            [self showAlertWithTitle:@"MOXIEIT" andMessage:errorMessage];
         }
     }];
 }
@@ -342,7 +342,7 @@
     NSError *error;
     NSData *data = [NSJSONSerialization dataWithJSONObject:menuDict options:0 error:&error];
     if (error) {
-        [appDelegate showAlertWithTitle:@"MOXIEIT" andMessage:error.localizedDescription];
+        [self showAlertWithTitle:@"MOXIEIT" andMessage:error.localizedDescription];
         return;
     }
     
@@ -414,7 +414,7 @@
     NSError *error;
     NSData *data = [NSJSONSerialization dataWithJSONObject:postDict options:0 error:&error];
     if (error) {
-        [appDelegate showAlertWithTitle:@"MOXIEIT" andMessage:error.localizedDescription];
+        [self showAlertWithTitle:@"MOXIEIT" andMessage:error.localizedDescription];
         return;
     }
     
