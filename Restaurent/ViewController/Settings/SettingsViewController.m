@@ -19,7 +19,6 @@
 #import "WebServiceHandler.h"
 
 typedef NS_ENUM(NSUInteger, SettingFields) {
-    kSocialID = 0,
     kUserSettingsID,
     kAppDetailsID
 };
@@ -71,9 +70,6 @@ typedef NS_ENUM(NSUInteger, SettingFields) {
 - (NSString *)getKeyForSection:(NSInteger)section {
     NSString *aKey = nil;
     switch (section) {
-        case kSocialID:
-            aKey = @"SOCIAL";
-            break;
         case kUserSettingsID:
             aKey = @"USER SETTINGS";
             break;
@@ -129,18 +125,7 @@ typedef NS_ENUM(NSUInteger, SettingFields) {
 - (void)switchDidSelectInCell:(SettingsTableViewCell *)aCell {
     NSIndexPath *selectedIndexPath =  [self.settingsTableView indexPathForCell:aCell];
     switch (selectedIndexPath.section) {
-        case 0://Social
-        {
-            if (0 == selectedIndexPath.row) {//FaceBook Row
-                if ([aCell.accountSwitch isOn]) {//Login into facebook
-                    [self loginFacebook];
-                } else {//Logout of facebook
-                    [loginManager logOut];
-                }
-            }
-        }
-            break;
-        case 1://User Details Section
+        case 0://User Details Section
         {
             if (selectedIndexPath.row == 2) {
                 if (![aCell.accountSwitch isOn]) {//Signout of current loggedin restaurant.
@@ -194,7 +179,8 @@ typedef NS_ENUM(NSUInteger, SettingFields) {
         [appDelegate showAlertWithTitle:@"MOXIEIT" andMessage:error.localizedDescription];
         return;
     }
-    [[WebServiceHandler sharedHandler] postData:data toURLString:FB_CONNECT_API callBackCompletionHandler:^(id jsonObject, NSError *error) {
+    NSString *urlStr = [NSString stringWithFormat:FB_CONNECT_API, SERVER_DOMAIN_NAME_CONSTANT];
+    [[WebServiceHandler sharedHandler] postData:data toURLString:urlStr callBackCompletionHandler:^(id jsonObject, NSError *error) {
         NSString *errorMessage = nil;
         if (error) {
             errorMessage = error.localizedDescription;
@@ -220,9 +206,7 @@ typedef NS_ENUM(NSUInteger, SettingFields) {
 
 - (void)performSelectorForSelectedIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.section) {
-        case 0:
-            break;
-        case 1://User Details Section
+        case 0://User Details Section
         {
             switch (indexPath.row) {
                 case 0://User Details
@@ -236,7 +220,7 @@ typedef NS_ENUM(NSUInteger, SettingFields) {
             }
         }
             break;
-        case 2:
+        case 1:
         {
             NSArray *dataList = [self.dataDict objectForKey:@"APP DETAILS"];
             SettingModel *aModel = [dataList objectAtIndex:indexPath.row];

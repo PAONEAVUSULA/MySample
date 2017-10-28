@@ -7,36 +7,37 @@
 //
 
 #import "Constants.h"
+NSString *const SERVER_DOMAIN_NAME_CONSTANT = @"https://vhnnifn9o0.execute-api.us-east-1.amazonaws.com/Lexpayment";
 
-
-NSString *const LOGIN_API = @"https://vhnnifn9o0.execute-api.us-east-1.amazonaws.com/Lexpayment/applogin";/* ##########  Login Constants  ########## */
+/* ##########  Login Constants  ########## */
+NSString *const LOGIN_API = @"%@/applogin";
 
 /* ##########   ##########  Registration Constants  ##########  ########## */
-NSString *const REGISTRATION_API = @"https://vhnnifn9o0.execute-api.us-east-1.amazonaws.com/Lexpayment/restaurantdetails";
-NSString *const IMAGE_UPLOAD_API = @"https://vhnnifn9o0.execute-api.us-east-1.amazonaws.com/Lexpayment/uploadimage";
+NSString *const REGISTRATION_API = @"%@/restaurantdetails";
+NSString *const IMAGE_UPLOAD_API = @"%@/uploadimage";
 
 /* ##########   ##########  Bank Info Constants  ##########  ########## */
-NSString *const POST_BANK_DETAILS_API = @"https://vhnnifn9o0.execute-api.us-east-1.amazonaws.com/Lexpayment/lexbankaccountdetails";
-NSString *const GET_BANK_DETAILS_API = @"https://vhnnifn9o0.execute-api.us-east-1.amazonaws.com/Lexpayment/getbankacountdetails?botName=%@";
+NSString *const POST_BANK_DETAILS_API = @"%@/lexbankaccountdetails";
+NSString *const GET_BANK_DETAILS_API = @"%@/getbankacountdetails?botName=%@";
 
 /* ##########   ##########  CATEGORY MENU Constants  ##########  ########## */
-NSString *const GET_CATEGORIES_API = @"https://vhnnifn9o0.execute-api.us-east-1.amazonaws.com/Lexpayment/getallmenucategory?botName=%@";
-NSString *const CHANGE_CATEGORIES_API = @"https://vhnnifn9o0.execute-api.us-east-1.amazonaws.com/Lexpayment/menucategory";
+NSString *const GET_CATEGORIES_API = @"%@/getallmenucategory?botName=%@";
+NSString *const CHANGE_CATEGORIES_API = @"%@/menucategory";
 
 /* ##########   ##########  MENU Constants  ##########  ########## */
-NSString *const GET_ALL_MENUITEMS_API = @"https://vhnnifn9o0.execute-api.us-east-1.amazonaws.com/Lexpayment/menuitemsbycategoryid?categoryId=%@";
-NSString *const CHANGE_MENUITEMS_API = @"https://vhnnifn9o0.execute-api.us-east-1.amazonaws.com/Lexpayment/menuitems";
+NSString *const GET_ALL_MENUITEMS_API = @"%@/menuitemsbycategoryid?categoryId=%@";
+NSString *const CHANGE_MENUITEMS_API = @"%@/menuitems";
 
 /* ##########   ##########  CONTACT US  ##########  ########## */
 NSString *const CONTACT_US_API = @"http://moxieit.com/contactus.html";
 
 /* ##########   ##########  SETTINGS Constants  ##########  ########## */
-NSString *const FB_CONNECT_API = @"https://vhnnifn9o0.execute-api.us-east-1.amazonaws.com/Lexpayment/fblogin";
+NSString *const FB_CONNECT_API = @"%@/fblogin";
 
 /* ##########   ##########  ORDERS SCREEN Constants  ##########  ########## */
-NSString *const SPEECH_POST_API = @"https://vhnnifn9o0.execute-api.us-east-1.amazonaws.com/Lexpayment/putstatus";
-NSString *const ORDERS_API = @"https://vhnnifn9o0.execute-api.us-east-1.amazonaws.com/Lexpayment/getorders?botName=%@";
-NSString *const ORDERS_HISTORY_API = @"https://vhnnifn9o0.execute-api.us-east-1.amazonaws.com/Lexpayment/orderhistory";
+NSString *const SPEECH_POST_API = @"%@/putstatus";
+NSString *const ORDERS_API = @"%@/getorders?botName=%@";
+NSString *const ORDERS_HISTORY_API = @"%@/orderhistory";
 
 @implementation Constants
 

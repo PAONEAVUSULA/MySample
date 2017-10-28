@@ -482,7 +482,9 @@ typedef NS_ENUM(NSUInteger, RegistrationFields) {
         [self showAlertWithTitle:@"MOXIEIT" andMessage:error.localizedDescription];
         return;
     }
-    [[WebServiceHandler sharedHandler] postData:data toURLString:IMAGE_UPLOAD_API callBackCompletionHandler:^(id jsonObject, NSError *error) {
+    
+    NSString *urlStr = [NSString stringWithFormat:IMAGE_UPLOAD_API, SERVER_DOMAIN_NAME_CONSTANT];
+    [[WebServiceHandler sharedHandler] postData:data toURLString:urlStr callBackCompletionHandler:^(id jsonObject, NSError *error) {
         NSString *errorMessage = nil;
         if (error) {
             errorMessage = error.localizedDescription;
@@ -515,7 +517,8 @@ typedef NS_ENUM(NSUInteger, RegistrationFields) {
         return;
     }
     
-    [[WebServiceHandler sharedHandler] postData:data toURLString:REGISTRATION_API callBackCompletionHandler:^(id jsonObject, NSError *error) {
+    NSString *urlStr = [NSString stringWithFormat:REGISTRATION_API, SERVER_DOMAIN_NAME_CONSTANT];
+    [[WebServiceHandler sharedHandler] postData:data toURLString:urlStr callBackCompletionHandler:^(id jsonObject, NSError *error) {
         NSString *errorMessage = nil;
         if (error) {
             errorMessage = error.localizedDescription;

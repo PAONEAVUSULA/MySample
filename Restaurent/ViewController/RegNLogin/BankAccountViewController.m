@@ -292,7 +292,8 @@ typedef NS_ENUM(NSUInteger, BankAccountFields) {
         [self showAlertWithTitle:@"MOXIEIT" andMessage:error.localizedDescription];
         return;
     }
-    [[WebServiceHandler sharedHandler] postData:data toURLString:POST_BANK_DETAILS_API callBackCompletionHandler:^(id jsonObject, NSError *error) {
+    NSString *urlStr = [NSString stringWithFormat:POST_BANK_DETAILS_API, SERVER_DOMAIN_NAME_CONSTANT];
+    [[WebServiceHandler sharedHandler] postData:data toURLString:urlStr callBackCompletionHandler:^(id jsonObject, NSError *error) {
         NSString *errorMessage = nil;
         if (error) {
             errorMessage = error.localizedDescription;
@@ -316,7 +317,7 @@ typedef NS_ENUM(NSUInteger, BankAccountFields) {
 
 - (void)getBankAccountDetails {
     [appDelegate showActivityIndicator];
-    NSString *urlStr = [NSString stringWithFormat:GET_BANK_DETAILS_API, appDelegate.aRestaurant.botName];
+    NSString *urlStr = [NSString stringWithFormat:GET_BANK_DETAILS_API, SERVER_DOMAIN_NAME_CONSTANT, appDelegate.aRestaurant.botName];
     [[WebServiceHandler sharedHandler] fetchDataforURLString:urlStr callBackCompletionHandler:^(id jsonObject, NSError *error) {
         NSString *errorMessage = nil;
         if (error) {

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Restaurent/ViewController/RegNLogin/RegistrationViewController.m"
-            timestampString = "529501361.913923"
+            timestampString = "530878334.049733"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "520"
-            endingLineNumber = "520"
+            startingLineNumber = "523"
+            endingLineNumber = "523"
             landmarkName = "-postRegistrationDetailsDictionary:"
             landmarkType = "7">
          </BreakpointContent>

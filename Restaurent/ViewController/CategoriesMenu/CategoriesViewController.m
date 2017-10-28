@@ -271,7 +271,7 @@
 
 - (void)getAllMenuCategories {//To get all Categories for restaurent
     [appDelegate showActivityIndicator];
-    NSString *urlStr = [NSString stringWithFormat:GET_CATEGORIES_API, appDelegate.aRestaurant.botName];
+    NSString *urlStr = [NSString stringWithFormat:GET_CATEGORIES_API, SERVER_DOMAIN_NAME_CONSTANT, appDelegate.aRestaurant.botName];
     [[WebServiceHandler sharedHandler] fetchDataforURLString:urlStr callBackCompletionHandler:^(id jsonObject, NSError *error) {
         NSString *errorMessage = nil;
         if (error) {
@@ -307,8 +307,8 @@
         [self showAlertWithTitle:@"MOXIEIT" andMessage:error.localizedDescription];
         return;
     }
-    
-    [[WebServiceHandler sharedHandler] postData:data toURLString:CHANGE_CATEGORIES_API callBackCompletionHandler:^(id jsonObject, NSError *error) {
+    NSString *urlStr = [NSString stringWithFormat:CHANGE_CATEGORIES_API, SERVER_DOMAIN_NAME_CONSTANT];
+    [[WebServiceHandler sharedHandler] postData:data toURLString:urlStr callBackCompletionHandler:^(id jsonObject, NSError *error) {
         NSString *errorMessage = nil;
         if (error) {
             errorMessage = error.localizedDescription;
@@ -372,8 +372,8 @@
         [self showAlertWithTitle:@"MOXIEIT" andMessage:error.localizedDescription];
         return;
     }
-
-    [[WebServiceHandler sharedHandler] postData:data toURLString:IMAGE_UPLOAD_API callBackCompletionHandler:^(id jsonObject, NSError *error) {
+    NSString *urlStr = [NSString stringWithFormat:IMAGE_UPLOAD_API, SERVER_DOMAIN_NAME_CONSTANT];
+    [[WebServiceHandler sharedHandler] postData:data toURLString:urlStr callBackCompletionHandler:^(id jsonObject, NSError *error) {
         NSString *errorMessage = nil;
         if (error) {
             errorMessage = error.localizedDescription;

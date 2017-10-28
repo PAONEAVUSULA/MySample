@@ -2,19 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>SOCIAL</key>
-	<array>
-		<dict>
-			<key>Title</key>
-			<string>FaceBook</string>
-			<key>Image_Icon</key>
-			<string>FB.png</string>
-			<key>isOn</key>
-			<false/>
-			<key>ShowSwitch</key>
-			<true/>
-		</dict>
-	</array>
 	<key>USER SETTINGS</key>
 	<array>
 		<dict>

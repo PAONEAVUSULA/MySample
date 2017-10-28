@@ -309,7 +309,7 @@
 
 - (void)getAllMenuListforSelectedCategory {//To get all Menu list for a selected category.
     [appDelegate showActivityIndicator];
-    NSString *urlStr = [NSString stringWithFormat:GET_ALL_MENUITEMS_API, self.selectedCategory.categoryID];
+    NSString *urlStr = [NSString stringWithFormat:GET_ALL_MENUITEMS_API, SERVER_DOMAIN_NAME_CONSTANT, self.selectedCategory.categoryID];
     [[WebServiceHandler sharedHandler] fetchDataforURLString:urlStr callBackCompletionHandler:^(id jsonObject, NSError *error) {
         NSString *errorMessage = nil;
         if (error) {
@@ -345,8 +345,8 @@
         [self showAlertWithTitle:@"MOXIEIT" andMessage:error.localizedDescription];
         return;
     }
-    
-    [[WebServiceHandler sharedHandler] postData:data toURLString:CHANGE_MENUITEMS_API callBackCompletionHandler:^(id jsonObject, NSError *error) {
+    NSString *urlStr = [NSString stringWithFormat:CHANGE_MENUITEMS_API, SERVER_DOMAIN_NAME_CONSTANT];
+    [[WebServiceHandler sharedHandler] postData:data toURLString:urlStr callBackCompletionHandler:^(id jsonObject, NSError *error) {
         NSString *errorMessage = nil;
         if (error) {
             errorMessage = error.localizedDescription;
@@ -417,8 +417,8 @@
         [self showAlertWithTitle:@"MOXIEIT" andMessage:error.localizedDescription];
         return;
     }
-    
-    [[WebServiceHandler sharedHandler] postData:data toURLString:IMAGE_UPLOAD_API callBackCompletionHandler:^(id jsonObject, NSError *error) {
+    NSString *urlStr = [NSString stringWithFormat:IMAGE_UPLOAD_API, SERVER_DOMAIN_NAME_CONSTANT];
+    [[WebServiceHandler sharedHandler] postData:data toURLString:urlStr callBackCompletionHandler:^(id jsonObject, NSError *error) {
         NSString *errorMessage = nil;
         if (error) {
             errorMessage = error.localizedDescription;
@@ -622,7 +622,6 @@
 }
 
 - (UIImage *)compressImage:(UIImage *)image {
-    
     NSData *imgData = UIImageJPEGRepresentation(image, 1); //1 it represents the quality of the image.
     NSLog(@"Size of Image(bytes):%ld",(unsigned long)[imgData length]);
     

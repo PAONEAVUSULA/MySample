@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *voiceOverButton;
 @property (weak, nonatomic) IBOutlet UIButton *orderStatusButton;
 @property (weak, nonatomic) IBOutlet UILabel *billLabel;
+@property (weak, nonatomic) IBOutlet UILabel *orderFromLabel;
 
 
 @property (weak, nonatomic) id<OrderCellDelegate> delegate;

@@ -166,11 +166,17 @@ static const CGFloat kTableViewCellEstimatedRowHeight = 150.0;
     // Configure the cell...
     OrderModel *aModel = [self.currentOrdersList objectAtIndex:indexPath.row];
     [orderCell.orderStatusButton setTitle:aModel.orderTrackingString forState:UIControlStateNormal];
-    [orderCell.timeLabel setText:aModel.timeString];
+//    [orderCell.timeLabel setText:aModel.timeString];
     orderCell.orderNameLabel.text = [NSString stringWithFormat:@"ID: %@", aModel.orderID];
     orderCell.billLabel.text = [NSString stringWithFormat:@"$%@", aModel.orderPrice];
     [self arrangeFoodItemsForCell:orderCell withOrderModel:aModel];
-    [orderCell.statusButton setSelected:[aModel.orderTrackingString isEqualToString:kStatusCompleted]];
+    [orderCell.orderFromLabel setText:[aModel.orderFrom substringToIndex:1]];
+//    [orderCell.statusButton setSelected:[aModel.orderTrackingString isEqualToString:kStatusCompleted]];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd/MM/yyyy hh:mm:ss"];
+    [orderCell.timeLabel setText:[dateFormatter stringFromDate:aModel.orderDate]];
+
     orderCell.delegate = self;
     [orderCell setBackgroundColor:[UIColor clearColor]];
     [orderCell setSelectionStyle:UITableViewCellSelectionStyleNone];
@@ -182,12 +188,16 @@ static const CGFloat kTableViewCellEstimatedRowHeight = 150.0;
     
     // Configure the cell...
     OrderModel *aModel = [self.historyOrdersList objectAtIndex:indexPath.row];
-    [orderCell.timeLabel setText:aModel.timeString];
+//    [orderCell.timeLabel setText:aModel.timeString];
     [orderCell.orderStatusButton setTitle:aModel.orderTrackingString forState:UIControlStateNormal];
     orderCell.orderNameLabel.text = [NSString stringWithFormat:@"ID: %@", aModel.orderID];
     orderCell.billLabel.text = [NSString stringWithFormat:@"$%@", aModel.orderPrice];
     [self arrangeFoodItemsForCell:orderCell withOrderModel:aModel];
     
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd/MM/yyyy hh:mm:ss"];
+    [orderCell.timeLabel setText:[dateFormatter stringFromDate:aModel.orderDate]];
+
     orderCell.delegate = self;
     [orderCell setBackgroundColor:[UIColor clearColor]];
     [orderCell setSelectionStyle:UITableViewCellSelectionStyleNone];
@@ -457,7 +467,8 @@ static const CGFloat kTableViewCellEstimatedRowHeight = 150.0;
         [appdelegate showAlertWithTitle:@"MOXIEIT" andMessage:error.localizedDescription];
         return;
     }
-    [[WebServiceHandler sharedHandler] postData:data toURLString:ORDERS_HISTORY_API callBackCompletionHandler:^(id jsonObject, NSError *error) {
+    NSString *urlStr = [NSString stringWithFormat:ORDERS_HISTORY_API, SERVER_DOMAIN_NAME_CONSTANT];
+    [[WebServiceHandler sharedHandler] postData:data toURLString:urlStr callBackCompletionHandler:^(id jsonObject, NSError *error) {
         NSString *errorMessage = nil;
         if (error) {
             errorMessage = error.localizedDescription;
@@ -473,6 +484,7 @@ static const CGFloat kTableViewCellEstimatedRowHeight = 150.0;
             }
         }
         [appdelegate stopActivityIndicator];
+        [self.ordersTableView reloadData];
         if (errorMessage) {
             [appdelegate showAlertWithTitle:@"MOXIEIT" andMessage:errorMessage];
         }
@@ -490,7 +502,8 @@ static const CGFloat kTableViewCellEstimatedRowHeight = 150.0;
         [appdelegate showAlertWithTitle:@"MOXIEIT" andMessage:error.localizedDescription];
         return;
     }
-    [[WebServiceHandler sharedHandler] postData:data toURLString:SPEECH_POST_API callBackCompletionHandler:^(id jsonObject, NSError *error) {
+    NSString *urlStr = [NSString stringWithFormat:SPEECH_POST_API, SERVER_DOMAIN_NAME_CONSTANT];
+    [[WebServiceHandler sharedHandler] postData:data toURLString:urlStr callBackCompletionHandler:^(id jsonObject, NSError *error) {
         NSString *errorMessage = nil;
         if (error) {
             errorMessage = error.localizedDescription;
@@ -512,8 +525,8 @@ static const CGFloat kTableViewCellEstimatedRowHeight = 150.0;
 - (void)getAllOrdersForBot
 {
     [appdelegate showActivityIndicator];
-    NSString *urlString = [NSString stringWithFormat:ORDERS_API, appdelegate.aRestaurant.botName];
-    [[WebServiceHandler sharedHandler] fetchDataforURLString:urlString callBackCompletionHandler:^(id jsonObject, NSError *error) {
+    NSString *urlStr = [NSString stringWithFormat:ORDERS_API, SERVER_DOMAIN_NAME_CONSTANT, appdelegate.aRestaurant.botName];
+    [[WebServiceHandler sharedHandler] fetchDataforURLString:urlStr callBackCompletionHandler:^(id jsonObject, NSError *error) {
         NSString *errorMessage = nil;
         if (error) {
             errorMessage = error.localizedDescription;
@@ -540,9 +553,14 @@ static const CGFloat kTableViewCellEstimatedRowHeight = 150.0;
 }
 
 - (NSArray *)modelOrdersList:(NSArray *)orders {
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"orderTime" ascending:NO];
+    NSArray *orderedArray = [orders sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+
+    
     NSMutableArray *newArray = [NSMutableArray arrayWithCapacity:0];
     
-    for (NSDictionary *orderDict in orders) {
+    for (NSDictionary *orderDict in orderedArray) {
         OrderModel *aModel = [[OrderModel alloc] initWithOrderDict:orderDict];
         
         NSMutableDictionary *newDictionary = [NSMutableDictionary dictionaryWithCapacity:0];
@@ -654,3 +672,14 @@ static const CGFloat kTableViewCellEstimatedRowHeight = 150.0;
 }
 
 @end
+
+
+/*
+ //    NSSortDescriptor
+ NSArray *sortedArray = [newArray sortedArrayUsingComparator:^NSComparisonResult(OrderModel *orderA, OrderModel *orderB) {
+ //        NSLog(@"A::%@   B:%@", orderA.orderDate, orderB.orderDate);
+ //        return [orderB.orderDate compare:orderA.orderDate];
+ return [orderA.orderDate compare:orderB.orderDate];
+ }];
+ NSLog(@"sortedArray::%@", sortedArray);
+ */

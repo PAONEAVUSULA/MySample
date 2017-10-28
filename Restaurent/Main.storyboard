@@ -992,37 +992,34 @@ Account Type :</string>
                                                             <rect key="frame" x="16" y="8" width="736" height="134"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ksr-wf-sIB">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="736" height="129"/>
+                                                                    <rect key="frame" x="5" y="0.0" width="726" height="129"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="tYo-gi-cc3">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="736" height="44"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="726" height="44"/>
                                                                             <subviews>
-                                                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kqj-eN-9lC">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="F" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVi-9b-RC4" userLabel="OrderFromLabel">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="20" height="44"/>
                                                                                     <constraints>
-                                                                                        <constraint firstAttribute="width" constant="44" id="wxh-Er-nQ6"/>
+                                                                                        <constraint firstAttribute="width" constant="20" id="UmJ-3f-ap5"/>
                                                                                     </constraints>
-                                                                                    <state key="normal" image="red"/>
-                                                                                    <state key="selected" image="green"/>
-                                                                                    <state key="highlighted" image="green"/>
-                                                                                    <userDefinedRuntimeAttributes>
-                                                                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="22"/>
-                                                                                    </userDefinedRuntimeAttributes>
-                                                                                </button>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="26-05-2017 02:15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v1x-k1-5B7">
-                                                                                    <rect key="frame" x="48" y="0.0" width="254.5" height="44"/>
+                                                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                                                                    <color key="textColor" red="0.0" green="0.69411764710000001" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                    <nil key="highlightedColor"/>
+                                                                                </label>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="26-05-2017 02:15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v1x-k1-5B7">
+                                                                                    <rect key="frame" x="24" y="0.0" width="273.5" height="44"/>
                                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                                                     <color key="textColor" red="0.0" green="0.50980392159999999" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pUK-fP-S0s">
-                                                                                    <rect key="frame" x="306.5" y="0.0" width="123" height="44"/>
+                                                                                    <rect key="frame" x="301.5" y="0.0" width="123" height="44"/>
                                                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="tNT-Vi-Jb2">
-                                                                                    <rect key="frame" x="433.5" y="0.0" width="254.5" height="44"/>
+                                                                                    <rect key="frame" x="428.5" y="0.0" width="249.5" height="44"/>
                                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                                                     <state key="normal" title="Order Status">
@@ -1036,7 +1033,7 @@ Account Type :</string>
                                                                                     </connections>
                                                                                 </button>
                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qw-Ny-7xv">
-                                                                                    <rect key="frame" x="692" y="0.0" width="44" height="44"/>
+                                                                                    <rect key="frame" x="682" y="0.0" width="44" height="44"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" constant="44" id="cli-bm-hTa"/>
                                                                                     </constraints>
@@ -1052,22 +1049,22 @@ Account Type :</string>
                                                                             </constraints>
                                                                         </stackView>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="WRq-5O-wBa">
-                                                                            <rect key="frame" x="0.0" y="44" width="736" height="60"/>
+                                                                            <rect key="frame" x="0.0" y="44" width="726" height="60"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1MG-ev-r4f">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="242.5" height="60"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="239.5" height="60"/>
                                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CzG-Zv-sk9">
-                                                                                    <rect key="frame" x="246.5" y="0.0" width="243" height="60"/>
+                                                                                    <rect key="frame" x="243.5" y="0.0" width="239" height="60"/>
                                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1E-XC-zI3">
-                                                                                    <rect key="frame" x="493.5" y="0.0" width="242.5" height="60"/>
+                                                                                    <rect key="frame" x="486.5" y="0.0" width="239.5" height="60"/>
                                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
@@ -1075,16 +1072,16 @@ Account Type :</string>
                                                                             </subviews>
                                                                         </stackView>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MI9-bx-7iu">
-                                                                            <rect key="frame" x="0.0" y="104" width="736" height="25"/>
+                                                                            <rect key="frame" x="0.0" y="104" width="726" height="25"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Customer Messages : Make it spicy." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXg-N0-1b9">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="656" height="25"/>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customer Messages : Make it spicy." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXg-N0-1b9">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="646" height="25"/>
                                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$5000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HB2-IU-PxQ">
-                                                                                    <rect key="frame" x="656" y="0.0" width="80" height="25"/>
+                                                                                    <rect key="frame" x="646" y="0.0" width="80" height="25"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" constant="80" id="Jkk-Gy-reW"/>
                                                                                     </constraints>
@@ -1102,8 +1099,8 @@ Account Type :</string>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="trailing" secondItem="ksr-wf-sIB" secondAttribute="trailing" id="3SW-KU-N53"/>
-                                                                <constraint firstItem="ksr-wf-sIB" firstAttribute="leading" secondItem="9a2-z2-b5s" secondAttribute="leading" id="Aif-ZJ-v82"/>
+                                                                <constraint firstAttribute="trailing" secondItem="ksr-wf-sIB" secondAttribute="trailing" constant="5" id="3SW-KU-N53"/>
+                                                                <constraint firstItem="ksr-wf-sIB" firstAttribute="leading" secondItem="9a2-z2-b5s" secondAttribute="leading" constant="5" id="Aif-ZJ-v82"/>
                                                                 <constraint firstItem="ksr-wf-sIB" firstAttribute="top" secondItem="9a2-z2-b5s" secondAttribute="top" id="GQk-8g-gOP"/>
                                                                 <constraint firstAttribute="bottom" secondItem="ksr-wf-sIB" secondAttribute="bottom" constant="5" id="VAw-TO-NiV"/>
                                                             </constraints>
@@ -1126,9 +1123,9 @@ Account Type :</string>
                                                     <outlet property="customerMessageLabel" destination="TXg-N0-1b9" id="frd-4q-TyM"/>
                                                     <outlet property="dessertLabel" destination="S1E-XC-zI3" id="GKH-A8-g9J"/>
                                                     <outlet property="mainCourseLabel" destination="CzG-Zv-sk9" id="Ipw-Al-kgM"/>
+                                                    <outlet property="orderFromLabel" destination="RVi-9b-RC4" id="iDf-dl-2ni"/>
                                                     <outlet property="orderNameLabel" destination="pUK-fP-S0s" id="c3X-uq-p8t"/>
                                                     <outlet property="orderStatusButton" destination="tNT-Vi-Jb2" id="oY9-iy-PPJ"/>
-                                                    <outlet property="statusButton" destination="Kqj-eN-9lC" id="0iu-HW-L2k"/>
                                                     <outlet property="timeLabel" destination="v1x-k1-5B7" id="xH2-zx-p2s"/>
                                                     <outlet property="voiceOverButton" destination="7qw-Ny-7xv" id="pis-eQ-7yT"/>
                                                 </connections>
@@ -1144,25 +1141,25 @@ Account Type :</string>
                                                             <rect key="frame" x="16" y="8" width="736" height="134"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pSg-xv-baN">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="736" height="129"/>
+                                                                    <rect key="frame" x="5" y="0.0" width="726" height="129"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="bL4-U9-S4m">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="736" height="44"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="726" height="44"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="26-05-2017 02:15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jd-Zj-wg1">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="302.5" height="44"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="297.5" height="44"/>
                                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                                                     <color key="textColor" red="0.0" green="0.50980392159999999" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxs-uB-1dS">
-                                                                                    <rect key="frame" x="306.5" y="0.0" width="123" height="44"/>
+                                                                                    <rect key="frame" x="301.5" y="0.0" width="123" height="44"/>
                                                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="tnJ-Ib-VTn">
-                                                                                    <rect key="frame" x="433.5" y="0.0" width="302.5" height="44"/>
+                                                                                    <rect key="frame" x="428.5" y="0.0" width="297.5" height="44"/>
                                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                                                     <state key="normal" title="Order Status">
@@ -1182,22 +1179,22 @@ Account Type :</string>
                                                                             </constraints>
                                                                         </stackView>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="hoj-uP-rUk">
-                                                                            <rect key="frame" x="0.0" y="44" width="736" height="60"/>
+                                                                            <rect key="frame" x="0.0" y="44" width="726" height="60"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RhE-Mm-h5Z">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="242.5" height="60"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="239.5" height="60"/>
                                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uC1-64-WEd">
-                                                                                    <rect key="frame" x="246.5" y="0.0" width="243" height="60"/>
+                                                                                    <rect key="frame" x="243.5" y="0.0" width="239" height="60"/>
                                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V21-1A-3vQ">
-                                                                                    <rect key="frame" x="493.5" y="0.0" width="242.5" height="60"/>
+                                                                                    <rect key="frame" x="486.5" y="0.0" width="239.5" height="60"/>
                                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
@@ -1205,16 +1202,16 @@ Account Type :</string>
                                                                             </subviews>
                                                                         </stackView>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dib-5J-Yib">
-                                                                            <rect key="frame" x="0.0" y="104" width="736" height="25"/>
+                                                                            <rect key="frame" x="0.0" y="104" width="726" height="25"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Customer Messages : Make it spicy." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EV0-T0-exm">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="656" height="25"/>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customer Messages : Make it spicy." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EV0-T0-exm">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="646" height="25"/>
                                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$5000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qwJ-q9-9sh">
-                                                                                    <rect key="frame" x="656" y="0.0" width="80" height="25"/>
+                                                                                    <rect key="frame" x="646" y="0.0" width="80" height="25"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" constant="80" id="in6-mN-aHw"/>
                                                                                     </constraints>
@@ -1233,9 +1230,9 @@ Account Type :</string>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstItem="pSg-xv-baN" firstAttribute="top" secondItem="Pnq-EC-QV4" secondAttribute="top" id="B5s-TV-C1J"/>
-                                                                <constraint firstAttribute="trailing" secondItem="pSg-xv-baN" secondAttribute="trailing" id="Dx1-HN-xSl"/>
+                                                                <constraint firstAttribute="trailing" secondItem="pSg-xv-baN" secondAttribute="trailing" constant="5" id="Dx1-HN-xSl"/>
                                                                 <constraint firstAttribute="bottom" secondItem="pSg-xv-baN" secondAttribute="bottom" constant="5" id="nUg-Za-FQu"/>
-                                                                <constraint firstItem="pSg-xv-baN" firstAttribute="leading" secondItem="Pnq-EC-QV4" secondAttribute="leading" id="xvR-OP-Zty"/>
+                                                                <constraint firstItem="pSg-xv-baN" firstAttribute="leading" secondItem="Pnq-EC-QV4" secondAttribute="leading" constant="5" id="xvR-OP-Zty"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
@@ -2521,7 +2518,7 @@ Account Type :</string>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <switch opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kel-Rc-IvN">
+                                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kel-Rc-IvN">
                                                                     <rect key="frame" x="543" y="9" width="51" height="31"/>
                                                                     <connections>
                                                                         <action selector="accountSwitchValueChanged:" destination="hXf-lw-Kak" eventType="valueChanged" id="Xrw-JG-Sv2"/>
@@ -2647,7 +2644,6 @@ Account Type :</string>
         <image name="UserDetails" width="128" height="128"/>
         <image name="expand_arrow" width="128" height="128"/>
         <image name="gallery" width="240" height="240"/>
-        <image name="green" width="44" height="44"/>
         <image name="red" width="44" height="44"/>
         <image name="refresh" width="200" height="200"/>
         <image name="settings" width="256" height="256"/>

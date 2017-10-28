@@ -23,7 +23,7 @@
     dispatch_queue_t aQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(aQueue, ^{
         NSURL *aURL = [NSURL URLWithString:urlString];
-        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:aURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:20.0];
+        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:aURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:200.0];
         NSURLSession *urlSession = [NSURLSession sharedSession];
         NSURLSessionDataTask *dataTask = [urlSession dataTaskWithRequest:urlRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             if (data) {
@@ -47,7 +47,7 @@
     dispatch_queue_t aQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(aQueue, ^{
         NSURL *aURL = [NSURL URLWithString:urlString];
-        NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:aURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:20.0];
+        NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:aURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:200.0];
         [urlRequest setHTTPMethod:@"POST"];
         [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
         [urlRequest setHTTPBody:data];

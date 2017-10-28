@@ -96,7 +96,8 @@
         return;
     }
     
-    [[WebServiceHandler sharedHandler] postData:data toURLString:LOGIN_API callBackCompletionHandler:^(id jsonObject, NSError *error) {
+    NSString *urlStr = [NSString stringWithFormat:LOGIN_API, SERVER_DOMAIN_NAME_CONSTANT];
+    [[WebServiceHandler sharedHandler] postData:data toURLString:urlStr callBackCompletionHandler:^(id jsonObject, NSError *error) {
         if (error) {
             [appDelegate showAlertWithTitle:@"MOXIEIT" andMessage:error.localizedDescription];
         } else {

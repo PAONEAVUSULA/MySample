@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-
+extern NSString *const SERVER_DOMAIN_NAME_CONSTANT;
 /* ##########  Login Constants  ########## */
 extern NSString *const LOGIN_API;
 
