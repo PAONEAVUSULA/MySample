@@ -179,7 +179,7 @@ typedef NS_ENUM(NSUInteger, SettingFields) {
         [appDelegate showAlertWithTitle:@"MOXIEIT" andMessage:error.localizedDescription];
         return;
     }
-    NSString *urlStr = [NSString stringWithFormat:FB_CONNECT_API, SERVER_DOMAIN_NAME_CONSTANT];
+    NSString *urlStr = [NSString stringWithFormat:FB_CONNECT_API, SERVER_DOMAIN_NAME];
     [[WebServiceHandler sharedHandler] postData:data toURLString:urlStr callBackCompletionHandler:^(id jsonObject, NSError *error) {
         NSString *errorMessage = nil;
         if (error) {

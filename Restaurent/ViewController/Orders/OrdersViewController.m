@@ -213,7 +213,11 @@ static const CGFloat kTableViewCellEstimatedRowHeight = 150.0;
         NSArray *itemsList = [aModel.foodItemsDict objectForKey:aKey];
         NSMutableString *itemsString = [NSMutableString stringWithCapacity:0];
         for (FoodItemModel *aFoodItem in itemsList) {
-            [itemsString appendFormat:@"\n%@ %@ (%@)", aFoodItem.itemQuantity, aFoodItem.itemName, aFoodItem.spicyLevel];
+//            self.pickUpMinString = [pickUp length] ? pickUp : @"0 Min";
+//            NSString *quantity = [aFoodItem.itemQuantity length] ? aFoodItem.itemQuantity : @"";
+            NSString *itemName = [aFoodItem.itemName length] ? aFoodItem.itemName : @"";
+            NSString *spice = [aFoodItem.spicyLevel length] ? aFoodItem.spicyLevel : @"";
+            [itemsString appendFormat:@"\n%@ %@ (%@)", aFoodItem.itemQuantity, itemName, spice];
         }
         NSUInteger index = [keysList indexOfObject:aKey];
         NSAttributedString *newString = [self getNewStringForKey:aKey withFoodString:itemsString];
@@ -467,7 +471,7 @@ static const CGFloat kTableViewCellEstimatedRowHeight = 150.0;
         [appdelegate showAlertWithTitle:@"MOXIEIT" andMessage:error.localizedDescription];
         return;
     }
-    NSString *urlStr = [NSString stringWithFormat:ORDERS_HISTORY_API, SERVER_DOMAIN_NAME_CONSTANT];
+    NSString *urlStr = [NSString stringWithFormat:ORDERS_HISTORY_API, SERVER_DOMAIN_NAME];
     [[WebServiceHandler sharedHandler] postData:data toURLString:urlStr callBackCompletionHandler:^(id jsonObject, NSError *error) {
         NSString *errorMessage = nil;
         if (error) {
@@ -502,7 +506,7 @@ static const CGFloat kTableViewCellEstimatedRowHeight = 150.0;
         [appdelegate showAlertWithTitle:@"MOXIEIT" andMessage:error.localizedDescription];
         return;
     }
-    NSString *urlStr = [NSString stringWithFormat:SPEECH_POST_API, SERVER_DOMAIN_NAME_CONSTANT];
+    NSString *urlStr = [NSString stringWithFormat:SPEECH_POST_API, SERVER_DOMAIN_NAME];
     [[WebServiceHandler sharedHandler] postData:data toURLString:urlStr callBackCompletionHandler:^(id jsonObject, NSError *error) {
         NSString *errorMessage = nil;
         if (error) {
@@ -525,7 +529,7 @@ static const CGFloat kTableViewCellEstimatedRowHeight = 150.0;
 - (void)getAllOrdersForBot
 {
     [appdelegate showActivityIndicator];
-    NSString *urlStr = [NSString stringWithFormat:ORDERS_API, SERVER_DOMAIN_NAME_CONSTANT, appdelegate.aRestaurant.botName];
+    NSString *urlStr = [NSString stringWithFormat:ORDERS_API, SERVER_DOMAIN_NAME, appdelegate.aRestaurant.botName];
     [[WebServiceHandler sharedHandler] fetchDataforURLString:urlStr callBackCompletionHandler:^(id jsonObject, NSError *error) {
         NSString *errorMessage = nil;
         if (error) {

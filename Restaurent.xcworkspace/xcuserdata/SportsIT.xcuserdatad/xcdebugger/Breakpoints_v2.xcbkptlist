@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Restaurent/ViewController/RegNLogin/RegistrationViewController.m"
-            timestampString = "530878334.049733"
+            filePath = "Restaurent/ViewController/CategoriesMenu/CategoriesViewController.m"
+            timestampString = "532108381.350733"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "523"
-            endingLineNumber = "523"
-            landmarkName = "-postRegistrationDetailsDictionary:"
+            startingLineNumber = "274"
+            endingLineNumber = "274"
+            landmarkName = "-getAllMenuCategories"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

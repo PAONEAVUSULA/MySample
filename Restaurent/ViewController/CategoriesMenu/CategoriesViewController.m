@@ -271,7 +271,7 @@
 
 - (void)getAllMenuCategories {//To get all Categories for restaurent
     [appDelegate showActivityIndicator];
-    NSString *urlStr = [NSString stringWithFormat:GET_CATEGORIES_API, SERVER_DOMAIN_NAME_CONSTANT, appDelegate.aRestaurant.botName];
+    NSString *urlStr = [NSString stringWithFormat:GET_CATEGORIES_API, SERVER_DOMAIN_NAME, appDelegate.aRestaurant.botName];
     [[WebServiceHandler sharedHandler] fetchDataforURLString:urlStr callBackCompletionHandler:^(id jsonObject, NSError *error) {
         NSString *errorMessage = nil;
         if (error) {
@@ -289,6 +289,8 @@
                     showNoItemsRow = YES;
                     errorMessage = @"Not yet created categories for your restaurant.";
                 }
+            } else {
+                errorMessage = @"Unable to fetch categories.";
             }
         }
         [appDelegate stopActivityIndicator];
@@ -307,7 +309,7 @@
         [self showAlertWithTitle:@"MOXIEIT" andMessage:error.localizedDescription];
         return;
     }
-    NSString *urlStr = [NSString stringWithFormat:CHANGE_CATEGORIES_API, SERVER_DOMAIN_NAME_CONSTANT];
+    NSString *urlStr = [NSString stringWithFormat:CHANGE_CATEGORIES_API, SERVER_DOMAIN_NAME];
     [[WebServiceHandler sharedHandler] postData:data toURLString:urlStr callBackCompletionHandler:^(id jsonObject, NSError *error) {
         NSString *errorMessage = nil;
         if (error) {
@@ -372,7 +374,7 @@
         [self showAlertWithTitle:@"MOXIEIT" andMessage:error.localizedDescription];
         return;
     }
-    NSString *urlStr = [NSString stringWithFormat:IMAGE_UPLOAD_API, SERVER_DOMAIN_NAME_CONSTANT];
+    NSString *urlStr = [NSString stringWithFormat:IMAGE_UPLOAD_API, SERVER_DOMAIN_NAME];
     [[WebServiceHandler sharedHandler] postData:data toURLString:urlStr callBackCompletionHandler:^(id jsonObject, NSError *error) {
         NSString *errorMessage = nil;
         if (error) {

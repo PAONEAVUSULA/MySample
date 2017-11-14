@@ -309,7 +309,7 @@
 
 - (void)getAllMenuListforSelectedCategory {//To get all Menu list for a selected category.
     [appDelegate showActivityIndicator];
-    NSString *urlStr = [NSString stringWithFormat:GET_ALL_MENUITEMS_API, SERVER_DOMAIN_NAME_CONSTANT, self.selectedCategory.categoryID];
+    NSString *urlStr = [NSString stringWithFormat:GET_ALL_MENUITEMS_API, SERVER_DOMAIN_NAME, self.selectedCategory.categoryID];
     [[WebServiceHandler sharedHandler] fetchDataforURLString:urlStr callBackCompletionHandler:^(id jsonObject, NSError *error) {
         NSString *errorMessage = nil;
         if (error) {
@@ -345,7 +345,7 @@
         [self showAlertWithTitle:@"MOXIEIT" andMessage:error.localizedDescription];
         return;
     }
-    NSString *urlStr = [NSString stringWithFormat:CHANGE_MENUITEMS_API, SERVER_DOMAIN_NAME_CONSTANT];
+    NSString *urlStr = [NSString stringWithFormat:CHANGE_MENUITEMS_API, SERVER_DOMAIN_NAME];
     [[WebServiceHandler sharedHandler] postData:data toURLString:urlStr callBackCompletionHandler:^(id jsonObject, NSError *error) {
         NSString *errorMessage = nil;
         if (error) {
@@ -417,7 +417,7 @@
         [self showAlertWithTitle:@"MOXIEIT" andMessage:error.localizedDescription];
         return;
     }
-    NSString *urlStr = [NSString stringWithFormat:IMAGE_UPLOAD_API, SERVER_DOMAIN_NAME_CONSTANT];
+    NSString *urlStr = [NSString stringWithFormat:IMAGE_UPLOAD_API, SERVER_DOMAIN_NAME];
     [[WebServiceHandler sharedHandler] postData:data toURLString:urlStr callBackCompletionHandler:^(id jsonObject, NSError *error) {
         NSString *errorMessage = nil;
         if (error) {

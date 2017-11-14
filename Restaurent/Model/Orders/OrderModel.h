@@ -16,6 +16,8 @@
 @property (nonatomic, strong) NSString *statusString;
 @property (nonatomic, strong) NSString *customerMsgString;
 @property (nonatomic, strong) NSString *orderTrackingString;
+@property (nonatomic, strong) NSString *pickUpMinString;
+@property (nonatomic, strong) NSString *orderedAddress;
 @property (nonatomic, strong) NSNumber *orderPrice;
 @property (nonatomic, strong) NSDate *orderDate;
 

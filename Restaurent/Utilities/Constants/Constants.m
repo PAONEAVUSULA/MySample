@@ -7,8 +7,8 @@
 //
 
 #import "Constants.h"
-NSString *const SERVER_DOMAIN_NAME_CONSTANT = @"https://vhnnifn9o0.execute-api.us-east-1.amazonaws.com/Lexpayment";
-
+//NSString *const SERVER_DOMAIN_NAME = @"https://vhnnifn9o0.execute-api.us-east-1.amazonaws.com/Lexpayment";
+NSString *const SERVER_DOMAIN_NAME = @"https://izzad1rdrh.execute-api.us-east-1.amazonaws.com/dev";//Dev
 /* ##########  Login Constants  ########## */
 NSString *const LOGIN_API = @"%@/applogin";
 

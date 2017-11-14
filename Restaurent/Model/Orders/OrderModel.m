@@ -20,12 +20,14 @@
         self.orderPrice = [aDict objectForKey:@"totalPrice"];
         self.orderTrackingString = [aDict objectForKey:@"orderTracking"];
         self.timeString = [aDict objectForKey:@"orderTime"];
-        
+        id pickUp = [aDict objectForKey:@"pickUp"];
+        self.orderedAddress = [aDict objectForKey:@"address"];
+        self.pickUpMinString = [pickUp length] ? pickUp : @"0 Min";
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"dd/MM/yyyy hh:mm:ss"];
         self.orderDate = [dateFormatter dateFromString:self.timeString];
         
-        NSLog(@"\nself.timeString:::::::%@ \n self.orderDate:::::::%@", self.timeString, [dateFormatter stringFromDate:self.orderDate]);
+//        NSLog(@"\nself.timeString:::::::%@ \n self.orderDate:::::::%@", self.timeString, [dateFormatter stringFromDate:self.orderDate]);
     }
     return self;
 }

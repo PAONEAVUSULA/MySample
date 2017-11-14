@@ -13,6 +13,9 @@
 @interface OrderPopOverViewController () {
     NSArray *sectionTitlesList;
 }
+@property (weak, nonatomic) IBOutlet UILabel *pickupLabel;
+@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+@property (weak, nonatomic) IBOutlet UITableView *orderItemsTableView;
 
 @end
 
@@ -24,7 +27,12 @@
     NSLog(@"self.anOrder>>>%@", self.selectedOrder);
     sectionTitlesList = [self.selectedOrder.foodItemsDict allKeys];
     [self.orderTitleLabel setText:[NSString stringWithFormat:@"Order %@", self.selectedOrder.orderID]];
-//    self.preferredContentSize = CGSizeMake(500.0, 500.0);
+    [self.pickupLabel setText:[NSString stringWithFormat:@"PickUp : %@", self.selectedOrder.pickUpMinString]];
+    if ([self.selectedOrder.orderedAddress length] && ![self.selectedOrder.orderedAddress isEqualToString:@"NULL"]) {
+        [self.addressLabel setText:self.selectedOrder.orderedAddress];
+    } else {
+        self.orderItemsTableView.tableHeaderView = nil;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
